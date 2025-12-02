@@ -1,17 +1,23 @@
 
 // images.js
 
-module.exports = [
+const images = [
   {
-    command: "جلجامشة",
-    path: "/images/جلجامشة.jpg"
+    id: 1,
+    title: "Landscape",
+    url: "https://example.com/images/landscape.jpg"
   },
   {
-    command: "dog",
-    path: "/images/dog.jpg"
+    id: 2,
+    title: "Mountains",
+    url: "https://example.com/images/mountain.jpg"
   },
   {
-    command: "logo",
-    path: "/images/logo.png"
+    id: 3,
+    title: "City",
+    url: "https://example.com/images/city.jpg"
   }
 ];
+
+// تصدير الموديول
+module.exports = images;
