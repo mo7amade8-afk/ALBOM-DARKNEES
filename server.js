@@ -5,14 +5,13 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 dotenv.config();
 
-// =============================
-// Import Data Files
-// =============================
+// Import Data
 import images from "./images.js";
 import videos from "./videos.js";
+import audios from "./audios.js";
 import texts from "./texts.js";
 import links from "./links.js";
-import audios from "./audios.js";
+import files from "./file.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -21,7 +20,7 @@ const TOKEN = process.env.BOT_TOKEN;
 const TELEGRAM = `https://api.telegram.org/bot${TOKEN}/`;
 
 // =============================
-// Send Text Message
+// Send Text
 // =============================
 async function sendMessage(chatId, text) {
   await axios.post(TELEGRAM + "sendMessage", {
@@ -61,6 +60,16 @@ async function sendAudio(chatId, url) {
 }
 
 // =============================
+// Send Document (File)
+// =============================
+async function sendFile(chatId, url) {
+  await axios.post(TELEGRAM + "sendDocument", {
+    chat_id: chatId,
+    document: url,
+  });
+}
+
+// =============================
 // Webhook Endpoint
 // =============================
 app.post("/webhook", async (req, res) => {
@@ -74,7 +83,7 @@ app.post("/webhook", async (req, res) => {
     const text = msg.text?.trim();
 
     if (text === "/start") {
-      return sendMessage(chatId, "Bot is ready. Send a command.");
+      return sendMessage(chatId, "Bot is ready. Send a command. 👑");
     }
 
     if (images[text]) return sendPhoto(chatId, images[text]);
@@ -82,15 +91,16 @@ app.post("/webhook", async (req, res) => {
     if (audios[text]) return sendAudio(chatId, audios[text]);
     if (texts[text]) return sendMessage(chatId, texts[text]);
     if (links[text]) return sendMessage(chatId, links[text]);
+    if (files[text]) return sendFile(chatId, files[text]);
 
-    sendMessage(chatId, "Unknown command.");
-  } catch (error) {
-    console.log("Error:", error);
+    sendMessage(chatId, "Unknown command. 👑");
+  } catch (err) {
+    console.log("Error:", err);
   }
 });
 
 // =============================
-// Run Server
+// Start Server
 // =============================
 app.listen(3000, () => {
   console.log("Bot server is running...");
