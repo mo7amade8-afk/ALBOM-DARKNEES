@@ -10,7 +10,7 @@ import videos from "./videos.js";
 import audios from "./audios.js";
 import texts from "./texts.js";
 import links from "./links.js";
-import files from "./file.js";
+import file from "./file.js";
 
 const app = express();
 app.use(bodyParser.json());
