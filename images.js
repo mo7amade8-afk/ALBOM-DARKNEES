@@ -1,23 +1,6 @@
 
-// images.js
-
-const images = [
-  {
-    id: 1,
-    title: "جلجامش",
-    url: "https://example.com/images/جلجامش.jpg"
-  },
-  {
-    id: 2,
-    title: "Mountains",
-    url: "https://example.com/images/mountain.jpg"
-  },
-  {
-    id: 3,
-    title: "City",
-    url: "https://example.com/images/city.jpg"
-  }
-];
-
-// تصدير الموديول
-module.exports = images;
+export default {
+  "ـ👑ـ": "https://raw.githubusercontent.com/USERNAME/REPO/main/images/example1.jpg",
+  "ـ👑ـ": "https://raw.githubusercontent.com/USERNAME/REPO/main/images/example2.png",
+  "ـ👑ـ": "https://raw.githubusercontent.com/USERNAME/REPO/main/images/example3.jpeg"
+};
