@@ -2,17 +2,17 @@
 {
   "name": "telegram-bot-server",
   "version": "1.0.0",
-  "description": "Telegram bot with webhook using Express",
-  "type": "module",
+  "description": "Simple Telegram bot server",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
+  "author": "",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.6.0",
-    "body-parser": "^1.20.2",
     "express": "^4.18.2",
-    "dotenv": "^16.3.1"
-  },
-  "license": "MIT"
+    "node-telegram-bot-api": "^0.61.0"
+  }
 }
