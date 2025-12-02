@@ -4,8 +4,8 @@
 const images = [
   {
     id: 1,
-    title: "Landscape",
-    url: "https://example.com/images/landscape.jpg"
+    title: "جلجامش",
+    url: "https://example.com/images/جلجامش.jpg"
   },
   {
     id: 2,
