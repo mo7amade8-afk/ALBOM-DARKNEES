@@ -1,13 +1,5 @@
 
-// videos.js
-
-module.exports = [
-  {
-    command: "intro",
-    path: "/videos/intro.mp4"
-  },
-  {
-    command: "clip1",
-    path: "/videos/clip1.mp4"
-  }
-];
+export default {
+  "ـ👑ـvideo1": "https://raw.githubusercontent.com/user/repo/main/video1.mp4",
+  "ـ👑ـvideo2": "https://raw.githubusercontent.com/user/repo/main/video2.mp4"
+};
