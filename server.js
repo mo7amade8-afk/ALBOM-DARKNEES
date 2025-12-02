@@ -5,13 +5,12 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Import Data
 import images from "./images.js";
 import videos from "./videos.js";
 import audios from "./audios.js";
 import texts from "./texts.js";
 import links from "./links.js";
-import files from "./files.js";
+import files from "./file.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,59 +18,41 @@ app.use(bodyParser.json());
 const TOKEN = process.env.BOT_TOKEN;
 const TELEGRAM = `https://api.telegram.org/bot${TOKEN}/`;
 
-// =============================
-// Send Text
-// =============================
 async function sendMessage(chatId, text) {
   await axios.post(TELEGRAM + "sendMessage", {
     chat_id: chatId,
-    text: text,
+    text: text
   });
 }
 
-// =============================
-// Send Photo
-// =============================
 async function sendPhoto(chatId, url) {
   await axios.post(TELEGRAM + "sendPhoto", {
     chat_id: chatId,
-    photo: url,
+    photo: url
   });
 }
 
-// =============================
-// Send Video
-// =============================
 async function sendVideo(chatId, url) {
   await axios.post(TELEGRAM + "sendVideo", {
     chat_id: chatId,
-    video: url,
+    video: url
   });
 }
 
-// =============================
-// Send Audio
-// =============================
 async function sendAudio(chatId, url) {
   await axios.post(TELEGRAM + "sendAudio", {
     chat_id: chatId,
-    audio: url,
+    audio: url
   });
 }
 
-// =============================
-// Send Document (File)
-// =============================
 async function sendFile(chatId, url) {
   await axios.post(TELEGRAM + "sendDocument", {
     chat_id: chatId,
-    document: url,
+    document: url
   });
 }
 
-// =============================
-// Webhook Endpoint
-// =============================
 app.post("/webhook", async (req, res) => {
   res.sendStatus(200);
 
@@ -99,9 +80,6 @@ app.post("/webhook", async (req, res) => {
   }
 });
 
-// =============================
-// Start Server
-// =============================
 app.listen(3000, () => {
   console.log("Bot server is running...");
 });
