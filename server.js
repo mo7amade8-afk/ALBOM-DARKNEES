@@ -11,7 +11,7 @@ import videos from "./videos.js";
 import audios from "./audios.js";
 import texts from "./texts.js";
 import links from "./links.js";
-import files from "./file.js";
+import files from "./files.js";
 
 const app = express();
 app.use(bodyParser.json());
