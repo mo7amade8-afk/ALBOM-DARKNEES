@@ -3,8 +3,8 @@
 
 module.exports = [
   {
-    command: "cat",
-    path: "/images/cat.png"
+    command: "جلجامشة",
+    path: "/images/جلجامشة.jpg"
   },
   {
     command: "dog",
