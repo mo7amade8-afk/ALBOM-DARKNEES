@@ -1,5 +1,4 @@
 
-
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
@@ -9,11 +8,11 @@ dotenv.config();
 // =============================
 // Import Data Files
 // =============================
-import images from "./Data/images.js";
-import videos from "./Data/Videos.js";
-import texts from "./Data/texts.js";
-import links from "./Data/Links.js";
-import audios from "./Data/Oudeos.js";
+import images from "./images.js";
+import videos from "./videos.js";
+import texts from "./texts.js";
+import links from "./links.js";
+import audios from "./audios.js";
 
 const app = express();
 app.use(bodyParser.json());
