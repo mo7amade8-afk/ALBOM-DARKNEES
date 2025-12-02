@@ -1,12 +1,13 @@
 
 services:
   - type: web
-    name: my-bot-server
+    name: mo7an-api
     env: node
     region: frankfurt
     plan: free
     buildCommand: "npm install"
     startCommand: "node server.js"
+    autoDeploy: true
     envVars:
-      - key: BOT_TOKEN
-        sync: false
+      - key: NODE_VERSION
+        value: 18
