@@ -1,0 +1,12 @@
+
+services:
+  - type: web
+    name: my-bot-server
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
